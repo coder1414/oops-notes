@@ -1,0 +1,59 @@
+**Single Inheritance** in C++ is a type of inheritance where a class (derived class) inherits from only one other class (base class). This means that the derived class can inherit attributes and behaviors (methods) from the base class, but only from that single base class.
+
+### Key Features of Single Inheritance:
+- **One-to-One Relationship**: A single derived class is associated with a single base class.
+- **Reuse of Code**: The derived class can reuse the functionalities of the base class, avoiding redundancy.
+- **Simple and Direct**: Single inheritance is straightforward, as it involves only one base and one derived class.
+
+### Syntax of Single Inheritance:
+```cpp
+class Base {
+    // members of the base class
+};
+
+class Derived : public Base {
+    // members of the derived class
+};
+```
+
+### Example of Single Inheritance:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Animal {  // Base class
+    public:
+    void eat() {
+        cout << "This animal eats food." << endl;
+    }
+};
+
+class Dog : public Animal {  // Derived class
+    public:
+    void bark() {
+        cout << "The dog barks." << endl;
+    }
+};
+
+int main() {
+    Dog myDog;     // Create an object of the derived class
+    myDog.eat();   // Call a method inherited from the base class
+    myDog.bark();  // Call a method of the derived class
+    return 0;
+}
+```
+
+### Explanation:
+- **Base Class**: `Animal` has a method `eat()`.
+- **Derived Class**: `Dog` inherits from `Animal` and adds its own method `bark()`.
+- In `main()`, an object of class `Dog` can call both the `eat()` method (from the `Animal` class) and the `bark()` method (from the `Dog` class).
+
+### Output:
+```
+This animal eats food.
+The dog barks.
+```
+
+### Summary:
+Single inheritance allows a derived class to inherit features from a single base class, which simplifies code reuse and the creation of more specialized classes.
